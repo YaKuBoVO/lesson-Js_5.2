@@ -1,5 +1,4 @@
 "use strict"
-
 const audioPlayer = document.getElementsByTagName('audio')[0];
 const play = document.querySelector('.play')
 const pause = document.querySelector('.pause');
@@ -7,6 +6,14 @@ const mute = document.querySelector('.mute');
 const unmute = document.querySelector('.unmute');
 const progressBar = document.querySelector('.progress_bar');
 const songWrapper = document.querySelector('.song-wrapper');
+const card = document.querySelector('.card');
+const active = document.querySelector('.active');
+
+card.addEventListener('click', () => {
+   card.classList.add('active');
+});
+
+
 
 play.addEventListener('click', function () {
    audioPlayer.play();

@@ -22,7 +22,13 @@ body {
   cursor: pointer;
 }
 
-.card {
+.container {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.container .card {
   position: relative;
   height: 500px;
   width: 320px;
@@ -37,50 +43,53 @@ body {
   background-color: #716f6f;
   cursor: pointer;
 }
-.card .progress_bar_wrap {
+.container .card .card.active {
+  transform: scale(1);
+}
+.container .card .progress_bar_wrap {
   width: 100%;
   height: 5px;
   border-radius: 10px;
   background: #848380;
 }
-.card .progress_bar_wrap .progress_bar {
+.container .card .progress_bar_wrap .progress_bar {
   width: 0;
   height: 5px;
   border-radius: 10px;
   background: #fff;
 }
-.card .card_controls {
+.container .card .card_controls {
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.card .card_controls .profile {
+.container .card .card_controls .profile {
   display: flex;
   align-items: center;
   gap: 5px;
   font-weight: 600;
   font-size: 14px;
 }
-.card .card_controls .profile_img {
+.container .card .card_controls .profile_img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.card .yours {
+.container .card .yours {
   color: #f1f1f1;
 }
-.card .time {
+.container .card .time {
   color: #a4a1a1;
 }
-.card .controls {
+.container .card .controls {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.card .song-wrapper {
+.container .card .song-wrapper {
   display: flex;
   align-items: center;
   justify-self: center;
@@ -94,7 +103,7 @@ body {
           user-select: none;
   transform: translateX(-50%);
 }
-.card .song-wrapper .comment-input {
+.container .card .song-wrapper .comment-input {
   outline: none;
   padding: 15px 40px;
   border-radius: 30px;
