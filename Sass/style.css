@@ -22,16 +22,30 @@ body {
   cursor: pointer;
 }
 
-.container {
+.parentContainer {
+  width: 100%;
+  height: 85vh;
   display: flex;
   align-items: center;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  overflow: hidden;
+  /* image position */
 }
-.container .card {
+.parentContainer .image-slider {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  transition: 0.7s;
+}
+.parentContainer .image-slider .slide-div {
   position: relative;
-  height: 500px;
-  width: 320px;
+  width: 250px;
+  height: 350px;
   padding: 20px;
   border-radius: 10px;
   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmRowEAgB_vknrMqBs2SDymSmS-U1NoE5Tvw&usqp=CAU") no-repeat;
@@ -41,55 +55,63 @@ body {
   background-position: 50%;
   background-repeat: no-repeat;
   background-color: #716f6f;
+  transition: 0.5s;
   cursor: pointer;
 }
-.container .card .card.active {
-  transform: scale(1);
+.parentContainer .image-slider .slide-div.active {
+  position: absolute;
+  width: 240px;
+  height: 350px;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-.container .card .progress_bar_wrap {
+.parentContainer .image-slider .slide-div:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.parentContainer .image-slider .slide-div .progress_bar_wrap {
   width: 100%;
   height: 5px;
   border-radius: 10px;
   background: #848380;
 }
-.container .card .progress_bar_wrap .progress_bar {
+.parentContainer .image-slider .slide-div .progress_bar_wrap .progress_bar {
   width: 0;
   height: 5px;
   border-radius: 10px;
   background: #fff;
 }
-.container .card .card_controls {
+.parentContainer .image-slider .card_controls {
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.container .card .card_controls .profile {
+.parentContainer .image-slider .card_controls .profile {
   display: flex;
   align-items: center;
   gap: 5px;
   font-weight: 600;
   font-size: 14px;
 }
-.container .card .card_controls .profile_img {
+.parentContainer .image-slider .card_controls .profile_img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.container .card .yours {
+.parentContainer .image-slider .yours {
   color: #f1f1f1;
 }
-.container .card .time {
+.parentContainer .image-slider .time {
   color: #a4a1a1;
 }
-.container .card .controls {
+.parentContainer .image-slider .controls {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.container .card .song-wrapper {
+.parentContainer .image-slider .song-wrapper {
   display: flex;
   align-items: center;
   justify-self: center;
@@ -103,9 +125,62 @@ body {
           user-select: none;
   transform: translateX(-50%);
 }
-.container .card .song-wrapper .comment-input {
+.parentContainer .image-slider .song-wrapper .comment-input {
   outline: none;
   padding: 15px 40px;
   border-radius: 30px;
   border: 1px solid #848380;
+}
+.parentContainer #slider-span1:target ~ .image-slider #img1,
+.parentContainer #slider-span1:target ~ .image-slider #button-1 {
+  width: 380px;
+  height: 585px;
+  background-color: transparent;
+  filter: saturate(100%);
+}
+.parentContainer #slider-span2:target ~ .image-slider #img2,
+.parentContainer #slider-span2:target ~ .image-slider #button-2 {
+  width: 380px;
+  height: 585px;
+  background-color: transparent;
+  filter: saturate(100%);
+}
+.parentContainer #slider-span3:target ~ .image-slider #img3,
+.parentContainer #slider-span3:target ~ .image-slider #button-3 {
+  width: 380px;
+  height: 585px;
+  background-color: transparent;
+  filter: saturate(100%);
+}
+.parentContainer #slider-span4:target ~ .image-slider #img4,
+.parentContainer #slider-span4:target ~ .image-slider #button-4 {
+  width: 380px;
+  height: 585px;
+  background-color: transparent;
+  filter: saturate(100%);
+}
+.parentContainer #slider-span5:target ~ .image-slider #img5,
+.parentContainer #slider-span3:target ~ .image-slider #button-5 {
+  width: 380px;
+  height: 585px;
+  background-color: transparent;
+  filter: saturate(100%);
+}
+.parentContainer #slider-span1:target ~ .image-slider {
+  left: 70%;
+}
+.parentContainer #slider-span2:target ~ .image-slider {
+  left: 50%;
+}
+.parentContainer #slider-span2:target ~ .image-slider #slider-span3:target ~ .image-slider {
+  left: 25%;
+}
+.parentContainer #slider-span2:target ~ .image-slider #slider-span4:target ~ .image-slider {
+  left: -25%;
+}
+.parentContainer #slider-span2:target ~ .image-slider #slider-span5:target ~ .image-slider {
+  left: -50%;
+}
+.parentContainer #slider-span2:target ~ .image-slider #slider-span5:target ~ .image-slider {
+  left: -70%;
 }/*# sourceMappingURL=style.css.map */
