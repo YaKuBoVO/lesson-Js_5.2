@@ -9,10 +9,6 @@ const songWrapper = document.querySelector('.song-wrapper');
 const card = document.querySelector('.card');
 
 
-
-//card.addEventListener('click', () => {
-//   card.classList.add('active');
-//});
    
    play.addEventListener('click', function () {
       audioPlayer.play();
